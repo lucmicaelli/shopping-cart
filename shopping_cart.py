@@ -36,19 +36,29 @@ def to_usd(my_price):
     """
     return f"${my_price:,.2f}" #> $12,000.71
 
-from datetime import date
+from datetime import date, datetime
 
 # TODO: write some Python code here to produce the desired output
 if __name__ == "__main__": #execute code here
 
+#making a list of the correct identifiers in the db
+    valid_ids = []
+    for q in range(len(products)):
+        valid_ids.append(int(products[q]["id"]))
+
+#collect user input. Send error if input is not in the list of correct identifiers
     product_ids = []
     user_input = ""
     while user_input != "DONE":
-        user_input = input ("Please input a product identifier. Or type 'DONE': ")
+        user_input = input ("Please input a product identifier, or type 'DONE': ")
         if user_input == "DONE":
             break
+#        elif user_input
+        elif int(user_input) not in valid_ids:
+            print("Product not in db. Please input existing identifier or type 'DONE': ")
         else:
             product_ids.append(int(user_input))
+    
     print("SHOPPING CART ITEM IDENTIFIERS INCLUDE: ", product_ids)
 
     print("---------------------------------")
