@@ -36,19 +36,35 @@ def to_usd(my_price):
     """
     return f"${my_price:,.2f}" #> $12,000.71
 
+from datetime import date
 
 # TODO: write some Python code here to produce the desired output
+if __name__ == "__main__": #execute code here
 
-product_ids = []
-user_input = ""
-while user_input != "DONE":
-    user_input = input ("Please input a product identifier. Or type 'DONE': ")
-    if user_input == "DONE":
-        break
-    else:
-        product_ids.append(user_input)
-print("SHOPPING CART ITEM IDENTIFIERS INCLUDE: ", product_ids)
+    product_ids = []
+    user_input = ""
+    while user_input != "DONE":
+        user_input = input ("Please input a product identifier. Or type 'DONE': ")
+        if user_input == "DONE":
+            break
+        else:
+            product_ids.append(int(user_input))
+    print("SHOPPING CART ITEM IDENTIFIERS INCLUDE: ", product_ids)
 
-for j in range(len(products)):
-    if products[j]["id"] == 11:
-        print(products[j]["name"], to_usd(products[j]["price"]))
+    print("---------------------------------")
+    print("GREEN FOODS GROCERY")
+    print("WWW.GREEN-FOODS-GROCERY.COM")
+    print("---------------------------------")
+    print("CHECKOUT AT", date.today())
+    print("---------------------------------")
+    print("SELECTED PRODUCTS:")
+
+
+    for j in range(len(products)):
+         for i in product_ids:
+            if products[j-1]["id"] == i:
+                print("... ", products[j-1]["name"], "(", to_usd(products[j]["price"]), ")")
+
+
+    print("---------------------------------")
+
