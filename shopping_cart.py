@@ -59,12 +59,24 @@ if __name__ == "__main__": #execute code here
     print("---------------------------------")
     print("SELECTED PRODUCTS:")
 
-
+    subtotal = 0
     for j in range(len(products)):
          for i in product_ids:
             if products[j-1]["id"] == i:
                 print("... ", products[j-1]["name"], "(", to_usd(products[j]["price"]), ")")
+                subtotal = subtotal + products[j]["price"]
+    
+    print("---------------------------------")
+    print("SUBTOTAL:", to_usd(subtotal))
 
+    tax = subtotal*0.0875
+    
+    print("TAX:", to_usd(tax))
+
+    total = subtotal + tax
+    
+    print("TOTAL:", to_usd(total))
 
     print("---------------------------------")
-
+    print("THANKS, SEE YOU AGAIN SOON!")
+    print("---------------------------------")
