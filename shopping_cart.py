@@ -49,29 +49,6 @@ while user_input != "DONE":
         product_ids.append(user_input)
 print("SHOPPING CART ITEM IDENTIFIERS INCLUDE: ", product_ids)
 
-# ids = []
-# user_input = ""
-# while user_input != "DONE":
-#     user_input = input ("Please input a product identifier. Or type 'done': ")
-#     ids.append(user_input)
-#     print(ids)
-# else:
-
-
-
-#while user_input != "DONE":
-#    user_input = input ("Please input a product identifier. Or type 'done': ")
-
-#    print("in database")
-#else:
-#    print("not in database")
-
-#ids.append(products[user_input])
-#print(user_input)
-
-#else print("error")
-
-#grades = []
-#for g in gradebook["students"]:
-#    grades.append(g["finalGrade"])
-#print("GRADES LIST:",grades)
+for j in range(len(products)):
+    if products[j]["id"] == 11:
+        print(products[j]["name"], to_usd(products[j]["price"]))
