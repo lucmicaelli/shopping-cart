@@ -60,14 +60,18 @@ if __name__ == "__main__": #execute code here
 
         else:
             product_ids.append(int(user_input))
+            print("ok")
     
     print("SHOPPING CART ITEM IDENTIFIERS INCLUDE: ", product_ids)
+
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
 
     print("---------------------------------")
     print("GREEN FOODS GROCERY")
     print("WWW.GREEN-FOODS-GROCERY.COM")
     print("---------------------------------")
-    print("CHECKOUT AT", date.today())
+    print("CHECKOUT ON", date.today(), "AT", current_time)
     print("---------------------------------")
     print("SELECTED PRODUCTS:")
 
